@@ -1,6 +1,6 @@
 # Example
 
-### Example shows [here](https://lincecumhao.github.io/Word-Search/)
+### Example shows [here](https://word-search-warnnamdbd.now.sh/)
 
 ### Complete code is [here](https://github.com/lincecumHao/Word-Search/blob/master/pages/index.js)
 
