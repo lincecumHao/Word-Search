@@ -1,6 +1,23 @@
 # Example
 
-example shows [here](https://lincecumhao.github.io/Word-Search/)
+### Example shows [here](https://lincecumhao.github.io/Word-Search/)
+
+### Complete code is [here](https://github.com/lincecumHao/Word-Search/blob/master/pages/index.js)
+
+## How to use
+
+```
+npm install
+npm run dev
+view on localhost:3000
+```
+
+### Notice
+This program have no specific entry point like [0][0], word can be in any place in board array.
+
+To keep simple, I don't use any css component like react-bootstrap.
+
+Cheers.
 
 # Word Search
 
@@ -43,17 +60,3 @@ True
 False
 ```
 
-# How to use
-
-```
-npm install
-npm run dev
-view on localhost:3000
-```
-
-### Notice
-This program have no specific entry point like [0][0], word can be in any place in board array.
-
-To keep simple, I don't use any css component like react-bootstrap.
-
-Cheers.
