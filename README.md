@@ -46,3 +46,10 @@ npm install
 npm run dev
 view on localhost:3000
 ```
+
+### Notice
+This program have no specific entry point like [0][0], word can be in any place in board array.
+
+To keep simple, I don't use any css component like react-bootstrap.
+
+Cheers.
