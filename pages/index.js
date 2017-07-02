@@ -8,17 +8,6 @@ const EAST = 4;
 class Index extends Component {
   constructor(props, context) {
     super(props, context);
-    this.board = [
-      ['A', 'B', 'C', 'E'],
-      ['S', 'F', 'C', 'S'],
-      ['A', 'D', 'E', 'E']
-    ];
-
-    this.words = [
-      ['A', 'S', 'A', 'D', 'B'],
-      ['A', 'B', 'C', 'C', 'E', 'D'],
-      ['A', 'B', 'C', 'F']
-    ];
     this.getNorth = this.getNorth.bind(this);
     this.getSouth = this.getSouth.bind(this);
     this.getEast = this.getEast.bind(this);
@@ -29,9 +18,17 @@ class Index extends Component {
     this.doCalculate = this.doCalculate.bind(this);
     this.state = {
       boardString: 'ABCE\nSFCS\nADEE',
-      boardAry: [],
+      boardAry: [
+        ['A', 'B', 'C', 'E'],
+        ['S', 'F', 'C', 'S'],
+        ['A', 'D', 'E', 'E']
+      ],
       wordString: 'ASADB\nABCCED\nABCF',
-      wordAry: [],
+      wordAry: [
+        ['A', 'S', 'A', 'D', 'B'],
+        ['A', 'B', 'C', 'C', 'E', 'D'],
+        ['A', 'B', 'C', 'F']
+      ],
       onCalcuate: false,
       result: {}
     };
@@ -97,10 +94,8 @@ class Index extends Component {
   // 實際計算
   doCalculate() {
     const { wordAry, boardAry } = this.state;
-    console.log(wordAry, boardAry);
     const result = {};
     wordAry.forEach((word) => {
-      console.log(word);
       // 開始計時
       const t0 = performance.now();
 
@@ -154,13 +149,6 @@ class Index extends Component {
             triedPath[path.length - 1] = [];
             path.pop();
           }
-
-          // // 防止無限迴圈
-          // if ((performance.now() - t0) / 1000 > 120) {
-          //   console.log('bad program');
-          //   break;
-          // }
-          // i += 1;
         }
 
         // 如果已經找到則不在嘗試

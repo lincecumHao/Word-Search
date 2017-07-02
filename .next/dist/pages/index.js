@@ -34,6 +34,9 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var _jsxFileName = 'C:\\A_Work\\2017_word_search\\pages\\index.js?entry';
+
+
 var NORTH = 1;
 var SOUTH = 2;
 var WEST = 3;
@@ -47,9 +50,6 @@ var Index = function (_Component) {
 
     var _this = (0, _possibleConstructorReturn3.default)(this, (Index.__proto__ || (0, _getPrototypeOf2.default)(Index)).call(this, props, context));
 
-    _this.board = [['A', 'B', 'C', 'E'], ['S', 'F', 'C', 'S'], ['A', 'D', 'E', 'E']];
-
-    _this.words = [['A', 'S', 'A', 'D', 'B'], ['A', 'B', 'C', 'C', 'E', 'D'], ['A', 'B', 'C', 'F']];
     _this.getNorth = _this.getNorth.bind(_this);
     _this.getSouth = _this.getSouth.bind(_this);
     _this.getEast = _this.getEast.bind(_this);
@@ -60,9 +60,9 @@ var Index = function (_Component) {
     _this.doCalculate = _this.doCalculate.bind(_this);
     _this.state = {
       boardString: 'ABCE\nSFCS\nADEE',
-      boardAry: [],
+      boardAry: [['A', 'B', 'C', 'E'], ['S', 'F', 'C', 'S'], ['A', 'D', 'E', 'E']],
       wordString: 'ASADB\nABCCED\nABCF',
-      wordAry: [],
+      wordAry: [['A', 'S', 'A', 'D', 'B'], ['A', 'B', 'C', 'C', 'E', 'D'], ['A', 'B', 'C', 'F']],
       onCalcuate: false,
       result: {}
     };
@@ -166,10 +166,8 @@ var Index = function (_Component) {
           wordAry = _state.wordAry,
           boardAry = _state.boardAry;
 
-      console.log(wordAry, boardAry);
       var result = {};
       wordAry.forEach(function (word) {
-        console.log(word);
         // 開始計時
         var t0 = performance.now();
 
@@ -223,13 +221,6 @@ var Index = function (_Component) {
               triedPath[path.length - 1] = [];
               path.pop();
             }
-
-            // // 防止無限迴圈
-            // if ((performance.now() - t0) / 1000 > 120) {
-            //   console.log('bad program');
-            //   break;
-            // }
-            // i += 1;
           }
 
           // 如果已經找到則不在嘗試
@@ -256,12 +247,107 @@ var Index = function (_Component) {
           wordAry = _state2.wordAry,
           result = _state2.result;
 
-      return _react2.default.createElement('div', null, _react2.default.createElement('h1', null, 'Enter board: '), _react2.default.createElement('textarea', { name: 'board', disabled: onCalcuate, rows: '10', cols: '100', onChange: this.onInputChange, value: boardString }), _react2.default.createElement('br', null), _react2.default.createElement('h1', null, 'Enter words: '), _react2.default.createElement('textarea', { name: 'word', disabled: onCalcuate, rows: '10', cols: '100', onChange: this.onInputChange, value: wordString }), _react2.default.createElement('br', null), _react2.default.createElement('button', { onClick: this.onCalcuate }, 'Calculate'), _react2.default.createElement('h1', null, 'Result'), _react2.default.createElement('table', null, _react2.default.createElement('thead', null, _react2.default.createElement('tr', null, _react2.default.createElement('th', null, 'Word'), _react2.default.createElement('th', null, 'Cost(milliseconds)'), _react2.default.createElement('th', null, 'Found'))), _react2.default.createElement('tbody', null, wordAry.map(function (word) {
+      return _react2.default.createElement('div', {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 172
+        }
+      }, _react2.default.createElement('h1', {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 173
+        }
+      }, 'Enter board: '), _react2.default.createElement('textarea', { name: 'board', disabled: onCalcuate, rows: '10', cols: '100', onChange: this.onInputChange, value: boardString, __source: {
+          fileName: _jsxFileName,
+          lineNumber: 174
+        }
+      }), _react2.default.createElement('br', {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 175
+        }
+      }), _react2.default.createElement('h1', {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 176
+        }
+      }, 'Enter words: '), _react2.default.createElement('textarea', { name: 'word', disabled: onCalcuate, rows: '10', cols: '100', onChange: this.onInputChange, value: wordString, __source: {
+          fileName: _jsxFileName,
+          lineNumber: 177
+        }
+      }), _react2.default.createElement('br', {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 178
+        }
+      }), _react2.default.createElement('button', { onClick: this.onCalcuate, __source: {
+          fileName: _jsxFileName,
+          lineNumber: 179
+        }
+      }, 'Calculate'), _react2.default.createElement('h1', {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 180
+        }
+      }, 'Result'), _react2.default.createElement('table', {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 181
+        }
+      }, _react2.default.createElement('thead', {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 182
+        }
+      }, _react2.default.createElement('tr', {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 183
+        }
+      }, _react2.default.createElement('th', {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 184
+        }
+      }, 'Word'), _react2.default.createElement('th', {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 185
+        }
+      }, 'Cost(milliseconds)'), _react2.default.createElement('th', {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 186
+        }
+      }, 'Found'))), _react2.default.createElement('tbody', {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 189
+        }
+      }, wordAry.map(function (word) {
         var str = word.join('');
         var res = result[str];
         var cost = res ? res.cost : '--';
         var found = res ? res.found : '--';
-        return _react2.default.createElement('tr', { key: str }, _react2.default.createElement('td', null, str), _react2.default.createElement('td', null, cost), _react2.default.createElement('td', { style: { color: found ? 'green' : 'red' } }, found.toString()));
+        return _react2.default.createElement('tr', { key: str, __source: {
+            fileName: _jsxFileName,
+            lineNumber: 197
+          }
+        }, _react2.default.createElement('td', {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 198
+          }
+        }, str), _react2.default.createElement('td', {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 199
+          }
+        }, cost), _react2.default.createElement('td', { style: { color: found ? 'green' : 'red' }, __source: {
+            fileName: _jsxFileName,
+            lineNumber: 200
+          }
+        }, found.toString()));
       }))));
     }
   }]);
